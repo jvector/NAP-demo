@@ -1,0 +1,26 @@
+<h2>Welcome to MyWardrobe</h2>
+
+
+<h3>Looking for Something ? ...</h3>
+<p>
+<form method="post" action="[% c.uri_for('search') %]">
+<input type="text" name="item">
+<input type="submit" name="Search" value="Search"></p>
+</form>
+</p>
+
+
+<h3>Show me everything!</h3>
+<p><a href="[% c.uri_for('/list') -%]">[Go]</a></p>
+
+<h3>Upload My Stuff! </h3>
+
+<p>
+<form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="form_submit" value="yes">
+      <input type="file" name="upload_file">
+      <input type="submit" value="Upload">
+</form>
+</p>
+
+

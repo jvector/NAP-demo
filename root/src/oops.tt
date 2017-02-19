@@ -1,0 +1,7 @@
+<h2> Oh Dear :-( </h2>
+<p> Sorry, we had an error.</p>
+<p> Computer says
+[% error_msg%]
+</p>
+
+<p> <a href="[% c.uri_for('/') -%]">[Take Me Home]</a></p>

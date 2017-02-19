@@ -1,0 +1,18 @@
+<h2>What's in My Wardrobe?</h2>
+
+<table>
+[% FOREACH item IN clothes %]
+<tr><td>[% item.name %]</td>
+    <td>[% item.category %]</td>
+    <td>[% FOREACH outfit in item.outfits %][% outfit.name %],[% END %]</td>
+[% END %]
+</table>
+
+[% IF 1 == 0 %] [% # intentionally false , change when wanted %]
+[% 
+  "<pre>";
+  USE Dumper(Indent=1, Pad="<br>" );
+  Dumper.dump(clothes) | html
+  "</pre>";
+%]
+[% END %]

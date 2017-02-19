@@ -1,0 +1,29 @@
+-- simple starter db definition for Net-A-Porter wardrobe test.
+
+PRAGMA foreign_keys=on;
+
+-- Table for clothes items
+CREATE TABLE clothes (
+       id    	     INTEGER PRIMARY KEY AUTOINCREMENT,
+       name  	     TEXT,
+       categoryid    INTEGER REFERENCES categories(id)
+);
+
+-- Table for clothing categories
+CREATE TABLE categories (
+       id	  INTEGER PRIMARY KEY AUTOINCREMENT,
+       name 	  TEXT
+);
+
+-- Table of outfits: just a name and a key
+CREATE TABLE outfits (
+       id	  INTEGER PRIMARY KEY AUTOINCREMENT,
+       name	  TEXT
+);
+
+-- Table to group clothes into outfits
+CREATE TABLE clothes_outfits (
+       id	  INTEGER PRIMARY KEY AUTOINCREMENT,
+       clothesid  INTEGER REFERENCES clothes(id),
+       outfitid   INTEGER REFERENCES outfits(id)
+);
